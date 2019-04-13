@@ -5,6 +5,8 @@
     <color name="colorAccent">#FF5722</color>
 
     <color name="iconInactiveColor">#80ffffff</color>
+    <color name="errorColor">#616161</color>
+
 
 
 </resources>

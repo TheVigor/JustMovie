@@ -3,4 +3,11 @@
     <string name="now_playing">Now Playing</string>
     <string name="top_rated">Top Rated</string>
     <string name="upcoming">Upcoming</string>
+    <string name="error_offline">Offline</string>
+    <string name="no_people">No people</string>
+    <string name="no_reviews">No reviews</string>
+    <string name="no_results">No results</string>
+    <string name="no_trailers">No trailers</string>
+    <string name="no_keywords">No keyword</string>
+    <string name="no_movies">No movies</string>
 </resources>
