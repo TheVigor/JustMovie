@@ -13,26 +13,26 @@ import com.noble.activity.justmovie.data.model.Movie
 import com.noble.activity.justmovie.ui.common.GridSpacingItemDecoration
 import kotlinx.android.synthetic.main.fragment_movie.*
 
-class MovieFragment: Fragment(), MovieAdapter.Listener {
+class MoviesFragment: Fragment(), MoviesAdapter.Listener {
     companion object {
         const val MOVIE_TYPE = "movie_type"
 
-        fun newInstance(type: String): MovieFragment {
+        fun newInstance(type: String): MoviesFragment {
             val args = Bundle()
             args.putString(MOVIE_TYPE, type)
 
-            val fragment = MovieFragment()
+            val fragment = MoviesFragment()
             fragment.arguments = args
             return fragment
         }
     }
 
     private lateinit var type: String
-    private lateinit var adapter: MovieAdapter
+    private lateinit var adapter: MoviesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        adapter = MovieAdapter(this)
+        adapter = MoviesAdapter(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -62,7 +62,7 @@ class MovieFragment: Fragment(), MovieAdapter.Listener {
     }
 
     override fun onMovieClick(movie: Movie) {
-        val intent = Intent(requireContext(), MovieActivity::class.java)
+        val intent = Intent(requireContext(), MoviesActivity::class.java)
         intent.putExtra(MOVIE_TYPE, movie)
         startActivity(intent)
     }

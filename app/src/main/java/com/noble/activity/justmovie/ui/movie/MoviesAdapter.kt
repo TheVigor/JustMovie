@@ -14,9 +14,9 @@ import java.util.*
 import kotlinx.android.synthetic.main.item_poster.*
 import kotlinx.android.extensions.LayoutContainer
 
-class MovieAdapter(
+class MoviesAdapter(
     private val listener: Listener
-): RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
+): RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
 
     interface Listener {
         fun onMovieClick(movie: Movie)

@@ -9,7 +9,7 @@ import com.noble.activity.justmovie.R
 import com.noble.activity.justmovie.ui.extensions.showToast
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MovieActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener  {
+class MoviesActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener  {
 
     companion object {
         private const val DEFAULT_FRAGMENT = R.id.item_playing
