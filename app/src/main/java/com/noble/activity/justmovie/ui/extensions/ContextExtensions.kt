@@ -1,4 +1,4 @@
-package com.noble.activity.justmovie.extensions
+package com.noble.activity.justmovie.ui.extensions
 
 import android.content.Context
 import android.widget.Toast
