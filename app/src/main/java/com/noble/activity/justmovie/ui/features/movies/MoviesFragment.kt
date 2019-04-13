@@ -1,4 +1,4 @@
-package com.noble.activity.justmovie.ui.movie
+package com.noble.activity.justmovie.ui.features.movies
 
 import android.content.Intent
 import android.os.Bundle

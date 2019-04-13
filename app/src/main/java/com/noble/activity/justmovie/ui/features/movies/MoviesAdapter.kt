@@ -1,4 +1,4 @@
-package com.noble.activity.justmovie.ui.movie
+package com.noble.activity.justmovie.ui.features.movies
 
 import android.view.LayoutInflater
 import android.view.View

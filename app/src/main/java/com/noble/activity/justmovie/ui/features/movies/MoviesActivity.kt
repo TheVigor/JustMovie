@@ -1,4 +1,4 @@
-package com.noble.activity.justmovie.ui.movie
+package com.noble.activity.justmovie.ui.features.movies
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +9,6 @@ import com.noble.activity.justmovie.R
 import com.noble.activity.justmovie.data.model.MoviesResponse.Companion.NOW_PLAYING
 import com.noble.activity.justmovie.data.model.MoviesResponse.Companion.TOP_RATED
 import com.noble.activity.justmovie.data.model.MoviesResponse.Companion.UPCOMING
-import com.noble.activity.justmovie.ui.extensions.showToast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MoviesActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener  {
