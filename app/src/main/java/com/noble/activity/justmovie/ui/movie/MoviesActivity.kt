@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.MenuItem
 import com.noble.activity.justmovie.R
+import com.noble.activity.justmovie.data.model.MoviesResponse.Companion.NOW_PLAYING
+import com.noble.activity.justmovie.data.model.MoviesResponse.Companion.TOP_RATED
+import com.noble.activity.justmovie.data.model.MoviesResponse.Companion.UPCOMING
 import com.noble.activity.justmovie.ui.extensions.showToast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -40,9 +43,21 @@ class MoviesActivity : AppCompatActivity(), BottomNavigationView.OnNavigationIte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.item_playing -> showToast("Playing")
-            R.id.item_rated -> showToast("Rated")
-            R.id.item_upcoming -> showToast("Upcoming")
+            R.id.item_playing ->
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(container.id, MoviesFragment.newInstance(NOW_PLAYING))
+                    .commit()
+            R.id.item_rated ->
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(container.id, MoviesFragment.newInstance(TOP_RATED))
+                    .commit()
+            R.id.item_upcoming ->
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(container.id, MoviesFragment.newInstance(UPCOMING))
+                    .commit()
         }
 
         return true
