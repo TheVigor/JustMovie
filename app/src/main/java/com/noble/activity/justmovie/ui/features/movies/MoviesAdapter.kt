@@ -9,6 +9,7 @@ import com.noble.activity.justmovie.R
 import com.noble.activity.justmovie.data.TmdbConfig.TMDB_IMAGE
 import com.noble.activity.justmovie.data.model.Movie
 import com.noble.activity.justmovie.ui.common.DebouncingOnClickListener
+import com.noble.activity.justmovie.ui.utils.DeviceUtils
 import java.util.*
 
 import kotlinx.android.synthetic.main.item_poster.*
@@ -33,8 +34,8 @@ class MoviesAdapter(
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_poster, parent, false)
         val holder = MovieViewHolder(view)
 
-        //val landscape = DeviceUtil.isLandscape(parent.context) || DeviceUtil.isTablet(parent.context)
-        //view.layoutParams.height = if (landscape) (parent.width / 2.5F).toInt() else (parent.width / 2 * 1.5F).toInt()
+        val landscape = DeviceUtils.isLandscape(parent.context) || DeviceUtils.isTablet(parent.context)
+        view.layoutParams.height = if (landscape) (parent.width / 2.5F).toInt() else (parent.width / 2 * 1.5F).toInt()
 
         return holder
     }
