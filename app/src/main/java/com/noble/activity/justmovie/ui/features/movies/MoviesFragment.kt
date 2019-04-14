@@ -47,7 +47,7 @@ class MoviesFragment: Fragment(), MoviesAdapter.Listener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val spanCount = 3
+        val spanCount = resources.getInteger(R.integer.movies_span_layout_count)
 
         adapter = MoviesAdapter(this)
 
