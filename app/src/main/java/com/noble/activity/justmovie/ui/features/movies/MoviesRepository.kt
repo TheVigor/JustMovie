@@ -45,4 +45,18 @@ class MoviesRepository(private val service: TmdbApi): MoviesContract.RepositoryC
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .map { it.movies }
+
+
+    companion object {
+        @Volatile
+        private var INSTANCE: MoviesRepository? = null
+
+        fun getInstance(service: TmdbApi): MoviesRepository {
+            return INSTANCE ?: synchronized(this) {
+                INSTANCE ?: MoviesRepository(service).also {
+                    INSTANCE = it
+                }
+            }
+        }
+    }
 }
