@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.noble.activity.justmovie.data.model.Movie
 import com.noble.activity.justmovie.ui.base.BaseViewModel
+import com.noble.activity.justmovie.ui.common.SingleLiveEvent
 import com.noble.activity.justmovie.ui.errors.EmptyViewMode
 import com.noble.activity.justmovie.ui.utils.NetworkUtils
 import retrofit2.HttpException
@@ -13,15 +14,15 @@ class MoviesViewModel(private val repository: MoviesRepository): BaseViewModel()
 
     private var page: Int = 0
 
-    private var _loadingState = MutableLiveData<Boolean>()
+    private var _loadingState = SingleLiveEvent<Boolean>()
     val loadingState: LiveData<Boolean>
             get() = _loadingState
 
-    private var _errorState = MutableLiveData<Int>()
+    private var _errorState = SingleLiveEvent<Int>()
     val errorState: LiveData<Int>
         get() = _errorState
 
-    private var _contentState = MutableLiveData<List<Movie>>()
+    private var _contentState = SingleLiveEvent<List<Movie>>()
     val contentState: LiveData<List<Movie>>
         get() = _contentState
 
