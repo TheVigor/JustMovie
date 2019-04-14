@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.MenuItem
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.content.ContextCompat
 import com.noble.activity.justmovie.R
 import com.noble.activity.justmovie.data.model.MoviesResponse.Companion.NOW_PLAYING
 import com.noble.activity.justmovie.data.model.MoviesResponse.Companion.TOP_RATED
 import com.noble.activity.justmovie.data.model.MoviesResponse.Companion.UPCOMING
+import com.noble.activity.justmovie.ui.utils.DeviceUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MoviesActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener  {
@@ -25,6 +28,9 @@ class MoviesActivity : AppCompatActivity(), BottomNavigationView.OnNavigationIte
         setSupportActionBar(toolbar)
         supportActionBar?.setTitle(R.string.app_name)
 
+        appBarLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.transparent30))
+
+        bottomNavigationView.setBackgroundColor(ContextCompat.getColor(this, R.color.transparent60))
         bottomNavigationView.setOnNavigationItemSelectedListener(this)
 
         if (savedInstanceState == null) {
