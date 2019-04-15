@@ -18,6 +18,8 @@
 
         <activity android:name=".ui.features.search.SearchActivity">
         </activity>
+        <activity android:name=".ui.features.about.AboutActivity">
+        </activity>
         <activity android:name="com.noble.activity.justmovie.ui.features.movies.MoviesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
