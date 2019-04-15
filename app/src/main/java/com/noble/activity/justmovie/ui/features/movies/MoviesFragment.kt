@@ -58,7 +58,7 @@ class MoviesFragment: Fragment(), MoviesAdapter.Listener {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1) && adapter.itemCount != 0) {
-                    //presenter.moviesNext(0, list)
+                    moviesViewModel.moviesNext(0, type)
                 }
             }
         })

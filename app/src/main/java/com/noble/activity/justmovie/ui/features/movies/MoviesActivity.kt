@@ -1,9 +1,11 @@
 package com.noble.activity.justmovie.ui.features.movies
 
+import android.content.Intent
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.Menu
 import android.view.MenuItem
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
@@ -45,6 +47,20 @@ class MoviesActivity : AppCompatActivity(), BottomNavigationView.OnNavigationIte
         outState?.putInt(ARG_BOTTOM_BAR_POSITION, bottomNavigationView.selectedItemId)
         super.onSaveInstanceState(outState, outPersistentState)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.item_search) {
+            val intent = Intent(this, MoviesActivity::class.java)
+            startActivity(intent)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_movies, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
