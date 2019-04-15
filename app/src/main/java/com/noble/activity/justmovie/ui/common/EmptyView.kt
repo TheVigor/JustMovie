@@ -7,7 +7,7 @@ import android.widget.FrameLayout
 import androidx.annotation.StringRes
 import com.noble.activity.justmovie.R
 import com.noble.activity.justmovie.ui.errors.EmptyViewMode
-import com.noble.activity.justmovie.ui.utils.ViewUtil
+import com.noble.activity.justmovie.ui.utils.ViewUtils
 import kotlinx.android.synthetic.main.view_empty.view.*
 
 class EmptyView: FrameLayout {
@@ -60,7 +60,7 @@ class EmptyView: FrameLayout {
     }
 
     private fun setIcon(icon: Int) {
-        emptyIcon.setImageDrawable(ViewUtil.getIcon(context, icon, R.color.errorColor))
+        emptyIcon.setImageDrawable(ViewUtils.getIcon(context, icon, R.color.errorColor))
     }
 
     private fun setText(@StringRes textId: Int) {

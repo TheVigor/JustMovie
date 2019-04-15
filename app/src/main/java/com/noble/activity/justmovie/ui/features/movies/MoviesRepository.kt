@@ -5,7 +5,7 @@ import com.noble.activity.justmovie.data.model.Movie
 import com.noble.activity.justmovie.data.model.MoviesResponse
 import com.noble.activity.justmovie.data.remote.TmdbApi
 import com.noble.activity.justmovie.ui.MovieApp
-import com.noble.activity.justmovie.ui.utils.AdultUtil
+import com.noble.activity.justmovie.ui.utils.AdultUtils
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -27,7 +27,7 @@ class MoviesRepository(private val service: TmdbApi): MoviesContract.RepositoryC
 
     override fun movies(keywordId: Int, page: Int): Observable<List<Movie>> =
         service.moviesByKeyword(keywordId, TMDB_API_KEY, Locale.getDefault().language,
-            AdultUtil.includeAdult(MovieApp.appContext), page)
+            AdultUtils.includeAdult(MovieApp.appContext), page)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .map { it.movies }

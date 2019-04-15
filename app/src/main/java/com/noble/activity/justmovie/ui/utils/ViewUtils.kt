@@ -9,7 +9,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 
-object ViewUtil {
+object ViewUtils {
 
     @RequiresApi(12)
     fun clearCursorDrawable(editText: EditText) {
