@@ -13,6 +13,7 @@ import com.noble.activity.justmovie.R
 import com.noble.activity.justmovie.data.model.MoviesResponse.Companion.NOW_PLAYING
 import com.noble.activity.justmovie.data.model.MoviesResponse.Companion.TOP_RATED
 import com.noble.activity.justmovie.data.model.MoviesResponse.Companion.UPCOMING
+import com.noble.activity.justmovie.ui.features.about.AboutActivity
 import com.noble.activity.justmovie.ui.features.search.SearchActivity
 import com.noble.activity.justmovie.ui.utils.DeviceUtils
 import kotlinx.android.synthetic.main.activity_main.*
@@ -52,6 +53,9 @@ class MoviesActivity : AppCompatActivity(), BottomNavigationView.OnNavigationIte
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.item_search) {
             val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        } else if (item.itemId == R.id.item_settings) {
+            val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
         }
         return super.onOptionsItemSelected(item)
