@@ -30,4 +30,18 @@ class DetailMovieRepository(private val service: TmdbApi): DetailMovieContract.R
         service.getAccountStates(movieId, TMDB_API_KEY, sessionId, "")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+
+    companion object {
+        @Volatile
+        private var INSTANCE: DetailMovieRepository? = null
+
+        fun getInstance(service: TmdbApi): DetailMovieRepository {
+            return INSTANCE ?: synchronized(this) {
+                INSTANCE ?: DetailMovieRepository(service).also {
+                    INSTANCE = it
+                }
+            }
+        }
+    }
+
 }
