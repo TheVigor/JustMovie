@@ -6,4 +6,7 @@
     <integer name="movies_span_layout_count">2</integer>
     <dimen name="movies_list_spacing">3dp</dimen>
 
+    <dimen name="backdrop_height">220dp</dimen>
+    <dimen name="backdrop_margin">0dp</dimen>
+
 </resources>

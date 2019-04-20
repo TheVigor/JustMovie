@@ -24,6 +24,7 @@ import com.noble.activity.justmovie.data.model.Movie
 import com.noble.activity.justmovie.data.remote.TmdbClient
 import com.noble.activity.justmovie.ui.common.GridSpacingItemDecoration
 import com.noble.activity.justmovie.ui.errors.EmptyViewMode
+import com.noble.activity.justmovie.ui.features.detailmovie.DetailMovieActivity
 import com.noble.activity.justmovie.ui.features.movies.MoviesActivity
 import com.noble.activity.justmovie.ui.features.movies.MoviesAdapter
 import com.noble.activity.justmovie.ui.features.movies.MoviesFragment.Companion.MOVIE_TYPE
@@ -229,7 +230,7 @@ class SearchFragment : Fragment(), SearchContract.ViewContract, MoviesAdapter.Li
     }
 
     override fun onMovieClick(movie: Movie) {
-        val intent = Intent(requireContext(), MoviesActivity::class.java)
+        val intent = Intent(requireContext(), DetailMovieActivity::class.java)
         intent.putExtra(MOVIE_TYPE, movie)
         startActivity(intent)
     }

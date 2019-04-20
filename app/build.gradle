@@ -74,6 +74,10 @@ dependencies {
 
     implementation 'com.github.jrvansuita:MaterialAbout:0.2.3'
 
+    implementation 'com.alexvasilkov:events:1.0.0' 
+    implementation 'com.alexvasilkov:gesture-views:2.4.0'
+    implementation 'com.alexvasilkov:android-commons:2.0.2'
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'

@@ -19,6 +19,7 @@ import com.noble.activity.justmovie.data.model.MoviesResponse.Companion.NOW_PLAY
 import com.noble.activity.justmovie.data.remote.TmdbClient
 import com.noble.activity.justmovie.ui.common.GridSpacingItemDecoration
 import com.noble.activity.justmovie.ui.features.about.AboutActivity
+import com.noble.activity.justmovie.ui.features.detailmovie.DetailMovieActivity
 import kotlinx.android.synthetic.main.fragment_movie.*
 
 
@@ -101,7 +102,7 @@ class MoviesFragment: Fragment(), MoviesAdapter.Listener {
     }
 
     override fun onMovieClick(movie: Movie) {
-        val intent = Intent(requireContext(), AboutActivity::class.java)
+        val intent = Intent(requireContext(), DetailMovieActivity::class.java)
         intent.putExtra(MOVIE_TYPE, movie)
         startActivity(intent)
     }
