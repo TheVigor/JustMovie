@@ -4,8 +4,18 @@
     <color name="colorPrimaryDark">#202020</color>
     <color name="colorAccent">#FF5722</color>
 
+    <color name="textColorPrimary">#ffffff</color>
+    <color name="textColorSecondary">#b3ffffff</color>
+    <color name="textColorHint">#80ffffff</color>
+    <color name="dividerColor">#1fffffff</color>
+    <color name="iconActiveColor">#ffffff</color>
     <color name="iconInactiveColor">#80ffffff</color>
     <color name="errorColor">#616161</color>
+
+    <color name="tmdbPrimary">#01d277</color>
+    <color name="tmdbSecondary">#081c24</color>
+    <color name="backdropBlur">#99081c24</color>
+    <color name="youtubeColor">#f44336</color>
 
     <color name="transparent">#00000000</color>
     <color name="transparent10">#1a000000</color><!--10% opacity-->

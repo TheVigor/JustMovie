@@ -21,9 +21,9 @@ interface DetailMovieContract {
 
     interface ViewModelContract {
         fun getDetails(sessionId: String, movieId: Int)
-        fun markFavorite(sessionId: String, accountId: Int, mediaId: Int, favorite: Boolean)
-        fun addWatchlist(sessionId: String, accountId: Int, mediaId: Int, watchlist: Boolean)
-        fun getAccountStates(sessionId: String, movieId: Int)
+        //fun markFavorite(sessionId: String, accountId: Int, mediaId: Int, favorite: Boolean)
+        //fun addWatchlist(sessionId: String, accountId: Int, mediaId: Int, watchlist: Boolean)
+        //fun getAccountStates(sessionId: String, movieId: Int)
     }
 
     interface RepositoryContract {

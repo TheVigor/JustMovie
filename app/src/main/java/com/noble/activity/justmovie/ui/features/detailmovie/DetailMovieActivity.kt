@@ -20,7 +20,7 @@ import java.util.*
 class DetailMovieActivity : AppCompatActivity() {
 
     private lateinit var movie: Movie
-    //private lateinit var fragment: DetailMovieFragment
+    private lateinit var fragment: DetailMovieFragment
 
     private val isSystemStatusBarShown: Boolean
         get() = window.decorView.systemUiVisibility and View.SYSTEM_UI_FLAG_FULLSCREEN == 0
@@ -31,8 +31,8 @@ class DetailMovieActivity : AppCompatActivity() {
 
         movie = intent.getSerializableExtra(MOVIE_TYPE) as Movie
 
-        //fragment = MovieFragment.newInstance(movie)
-        //supportFragmentManager.beginTransaction().replace(container.id, fragment).commit()
+        fragment = DetailMovieFragment.newInstance(movie)
+        supportFragmentManager.beginTransaction().replace(container.id, fragment).commit()
 
         window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimary)
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
@@ -52,12 +52,12 @@ class DetailMovieActivity : AppCompatActivity() {
 
 
         toolbarTitle.text = movie.title
-//        if (movie.backdropPath != null) {
-//            Glide.with(this)
-//                .load(TmdbConfig.image(movie.backdropPath))
-//                .thumbnail(0.1F)
-//                .into(cover)
-//        }
+        if (movie.backdropPath != null) {
+            Glide.with(this)
+                .load(TmdbConfig.image(movie.backdropPath))
+                .thumbnail(0.1F)
+                .into(cover)
+        }
 
         collapsingLayout.setContentScrimColor(ContextCompat.getColor(this, R.color.colorPrimary))
         collapsingLayout.setStatusBarScrimColor(ContextCompat.getColor(this, android.R.color.transparent))
@@ -86,11 +86,11 @@ class DetailMovieActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-//        if (fragment.imageAnimator != null && !fragment.imageAnimator!!.isLeaving) {
-//            fragment.imageAnimator?.exit(true)
-//        } else {
-//            super.onBackPressed()
-//        }
+        if (fragment.imageAnimator != null && !fragment.imageAnimator!!.isLeaving) {
+            fragment.imageAnimator?.exit(true)
+        } else {
+            super.onBackPressed()
+        }
     }
 
     fun showSystemStatusBar(state: Boolean) {

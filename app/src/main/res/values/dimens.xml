@@ -9,4 +9,16 @@
     <dimen name="backdrop_height">220dp</dimen>
     <dimen name="backdrop_margin">0dp</dimen>
 
+    <dimen name="genre_chip_radius">11dp</dimen>
+    <dimen name="genre_chip_text_margin_start">12dp</dimen>
+    <dimen name="genre_chip_text_margin_top">4dp</dimen>
+    <dimen name="genre_chip_text_margin_end">12dp</dimen>
+    <dimen name="genre_chip_text_margin_bottom">4dp</dimen>
+    <dimen name="genre_chip_text_size">16sp</dimen>
+
+    <dimen name="movie_content_margin">16dp</dimen>
+    <dimen name="movie_divider_margin_top">10dp</dimen>
+    <dimen name="crew_text_size">16sp</dimen>
+
+
 </resources>
